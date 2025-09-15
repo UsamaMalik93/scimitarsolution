@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Scimitar Solutions - Digital Marketing Website
+
+This is a [Next.js](https://nextjs.org) project for Scimitar Solutions, a digital marketing agency website built with modern technologies.
 
 ## Getting Started
 

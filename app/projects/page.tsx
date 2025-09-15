@@ -33,7 +33,7 @@ export default function Projects() {
       },
       technologies: ["React", "Next.js", "Stripe", "Shopify"],
       duration: "3 months",
-      testimonial: "MarketingPro transformed our online presence completely. The results speak for themselves!",
+      testimonial: "Scimitar Solutions transformed our online presence completely. The results speak for themselves!",
       rating: 5
     },
     {

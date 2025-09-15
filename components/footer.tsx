@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export function Footer() {
@@ -8,11 +9,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">M</span>
-              </div>
-              <span className="font-bold text-xl">MarketingPro</span>
+            <div className="flex items-center space-x-3">
+              <Image
+                src="/scimitar-logo.png"
+                alt="Scimitar Solutions Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+              <span className="font-bold text-xl text-blue-900 dark:text-white">Scimitar Solutions</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Empowering businesses with innovative marketing solutions that drive growth and success.
@@ -80,7 +85,7 @@ export function Footer() {
 
         <div className="border-t mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 MarketingPro. All rights reserved.
+            © 2025 Scimitar Solutions. All rights reserved.
           </p>
         </div>
       </div>

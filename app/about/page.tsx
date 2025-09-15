@@ -11,7 +11,7 @@ export default function AboutUs() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              About <span className="text-primary">MarketingPro</span>
+              About <span className="text-primary">Scimitar Solutions</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               We're a passionate team of digital marketing experts dedicated to helping 
@@ -28,7 +28,7 @@ export default function AboutUs() {
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">Our Story</h2>
               <p className="text-lg text-muted-foreground">
-                Founded in 2020, MarketingPro began with a simple mission: to democratize 
+                Founded in 2020, Scimitar Solutions began with a simple mission: to democratize 
                 digital marketing and make it accessible to businesses of all sizes. What 
                 started as a small team of three has grown into a full-service digital 
                 marketing agency serving clients worldwide.
@@ -223,7 +223,7 @@ export default function AboutUs() {
       <section className="py-20">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">Why Choose MarketingPro?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Why Choose Scimitar Solutions?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               What sets us apart from the competition
             </p>

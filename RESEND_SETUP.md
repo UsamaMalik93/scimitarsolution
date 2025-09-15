@@ -10,7 +10,7 @@
 ### 2. Get API Key
 1. After logging in, go to the [API Keys](https://resend.com/api-keys) page
 2. Click "Create API Key"
-3. Give it a name like "MarketingPro Contact Form"
+3. Give it a name like "Scimitar Solutions Contact Form"
 4. Copy the API key (starts with `re_`)
 
 ### 3. Add to Environment Variables
@@ -40,7 +40,7 @@ RESEND_API_KEY=re_your_api_key_here
 - **Professional Design**: Clean, modern HTML email template
 - **Contact Details**: All form fields included (name, email, company, phone, subject, message)
 - **Timestamp**: Shows when the form was submitted
-- **Branding**: MarketingPro branding and styling
+- **Branding**: Scimitar Solutions branding and styling
 - **Reply-To**: Set to the submitter's email for easy responses
 
 ## Free Tier Limits

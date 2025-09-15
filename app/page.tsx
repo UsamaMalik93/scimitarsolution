@@ -14,7 +14,7 @@ export default function Home() {
       <section className="py-20">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">Why Choose MarketingPro?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Why Choose Scimitar Solutions?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               We deliver results that matter to your business growth
             </p>
@@ -122,7 +122,7 @@ export default function Home() {
               {
                 name: "Sarah Johnson",
                 company: "TechStart Inc.",
-                content: "MarketingPro transformed our online presence. Our traffic increased by 300% in just 6 months!",
+                content: "Scimitar Solutions transformed our online presence. Our traffic increased by 300% in just 6 months!",
                 rating: 5
               },
               {

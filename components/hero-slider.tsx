@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Play, Users, Target, Zap, ChevronLeft, ChevronRight } from "lucide-react";
@@ -20,8 +21,6 @@ export function HeroSlider() {
       secondaryCta: "Learn More",
       secondaryCtaLink: "/about",
       background: "bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10",
-      icon: <Target className="h-16 w-16 text-primary" />,
-      stats: { value: "500+", label: "Happy Clients" }
     },
     {
       id: 2,
@@ -32,8 +31,6 @@ export function HeroSlider() {
       secondaryCta: "View Services",
       secondaryCtaLink: "/services",
       background: "bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10",
-      icon: <Zap className="h-16 w-16 text-primary" />,
-      stats: { value: "300%", label: "Traffic Increase" }
     },
     {
       id: 3,
@@ -44,8 +41,6 @@ export function HeroSlider() {
       secondaryCta: "View Projects",
       secondaryCtaLink: "/projects",
       background: "bg-gradient-to-br from-orange-500/10 via-red-500/10 to-pink-500/10",
-      icon: <Users className="h-16 w-16 text-primary" />,
-      stats: { value: "400%", label: "Engagement Boost" }
     },
     {
       id: 4,
@@ -56,18 +51,16 @@ export function HeroSlider() {
       secondaryCta: "See Our Work",
       secondaryCtaLink: "/projects",
       background: "bg-gradient-to-br from-purple-500/10 via-indigo-500/10 to-blue-500/10",
-      icon: <Play className="h-16 w-16 text-primary" />,
-      stats: { value: "250%", label: "Conversion Rate" }
     }
   ];
 
   // Auto-slide functionality
   useEffect(() => {
     if (isPaused) return;
-    
+
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(timer);
   }, [slides.length, isPaused]);
@@ -99,8 +92,8 @@ export function HeroSlider() {
   };
 
   return (
-    <section className="relative sm:py-64 md:py-10 overflow-hidden">
-      <div 
+    <section className="relative py-64 md:py-0 overflow-hidden">
+      <div
         className="relative"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -110,11 +103,10 @@ export function HeroSlider() {
           {slides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-                index === currentSlide 
-                  ? 'opacity-100 translate-x-0' 
+              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide
+                  ? 'opacity-100 translate-x-0'
                   : 'opacity-0 translate-x-full'
-              } ${slide.background}`}
+                } ${slide.background}`}
             >
               <div className="container h-full flex items-center">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
@@ -132,20 +124,6 @@ export function HeroSlider() {
                       <p className="text-xl text-muted-foreground max-w-2xl">
                         {slide.subtitle}
                       </p>
-                    </div>
-
-                    {/* Stats */}
-                    <div className="flex justify-center lg:justify-start">
-                      <Card className="w-fit shadow-lg">
-                        <CardContent className="p-6 text-center">
-                          <div className="text-3xl font-bold text-primary mb-1">
-                            {slide.stats.value}
-                          </div>
-                          <div className="text-sm text-muted-foreground">
-                            {slide.stats.label}
-                          </div>
-                        </CardContent>
-                      </Card>
                     </div>
 
                     {/* CTAs */}
@@ -176,7 +154,7 @@ export function HeroSlider() {
                           </div>
                         </div>
                       </div>
-                      
+
                       {/* Floating Elements */}
                       <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse"></div>
                       <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary/60 rounded-full animate-pulse delay-1000"></div>
@@ -192,18 +170,26 @@ export function HeroSlider() {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-20 bg-background/90 hover:bg-background rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 
+             bg-background/90 hover:bg-background rounded-full p-3 shadow-lg 
+             transition-all duration-200 hover:scale-110 
+             opacity-50 hover:opacity-100"
           aria-label="Previous slide"
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
+
         <button
           onClick={nextSlide}
-          className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-20 bg-background/90 hover:bg-background rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 
+             bg-background/90 hover:bg-background rounded-full p-3 shadow-lg 
+             transition-all duration-200 hover:scale-110 
+             opacity-50 hover:opacity-100"
           aria-label="Next slide"
         >
           <ChevronRight className="h-5 w-5" />
         </button>
+
 
         {/* Dots Navigation */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
@@ -211,11 +197,10 @@ export function HeroSlider() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
-                currentSlide === index 
-                  ? 'bg-primary scale-125 shadow-lg' 
+              className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${currentSlide === index
+                  ? 'bg-primary scale-125 shadow-lg'
                   : 'bg-primary/30 hover:bg-primary/50'
-              }`}
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

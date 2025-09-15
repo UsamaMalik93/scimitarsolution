@@ -101,7 +101,7 @@ await emailjs.send(
 ## Email Format You'll Receive:
 
 ```
-From: MarketingPro Contact Form
+From: Scimitar Solutions Contact Form
 To: usamamalik2033@gmail.com
 Subject: [User's Subject]
 

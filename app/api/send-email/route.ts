@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'MarketingPro Contact Form <onboarding@resend.dev>', // You can change this to your domain
+      from: 'Scimitar Solutions Contact Form <onboarding@resend.dev>', // You can change this to your domain
       to: ['usamamalik2033@gmail.com'],
       subject: `New Contact Form Submission: ${subject}`,
       html: `
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
           
           <div style="margin-top: 20px; padding: 15px; background-color: #e9ecef; border-radius: 5px; font-size: 12px; color: #6c757d;">
             <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
-            <p><strong>From:</strong> MarketingPro Contact Form</p>
+            <p><strong>From:</strong> Scimitar Solutions Contact Form</p>
           </div>
         </div>
       `,
