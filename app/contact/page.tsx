@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
-import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -92,7 +91,7 @@ export default function Contact() {
               Get In <span className="text-primary">Touch</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to transform your business? Let's discuss your marketing goals 
+              Ready to transform your business? Let&apos;s discuss your marketing goals 
               and how we can help you achieve them.
             </p>
           </div>
@@ -108,7 +107,7 @@ export default function Contact() {
               <div className="space-y-6 mb-8">
                 <h2 className="text-3xl font-bold">Send us a message</h2>
                 <p className="text-muted-foreground">
-                  Fill out the form below and we'll get back to you within 24 hours.
+                  Fill out the form below and we&apos;ll get back to you within 24 hours.
                 </p>
               </div>
 
@@ -118,7 +117,7 @@ export default function Contact() {
                     <CheckCircle className="h-16 w-16 text-green-500 mx-auto" />
                     <h3 className="text-2xl font-bold text-green-500">Message Sent!</h3>
                     <p className="text-muted-foreground">
-                      Thank you for your message. We'll get back to you soon.
+                      Thank you for your message. We&apos;ll get back to you soon.
                     </p>
                   </CardContent>
                 </Card>
@@ -236,7 +235,7 @@ export default function Contact() {
                         <h3 className="font-semibold text-lg">Email Us</h3>
                         <p className="text-muted-foreground">info@marketingpro.com</p>
                         <p className="text-sm text-muted-foreground mt-1">
-                          We'll respond within 24 hours
+                          We&apos;ll respond within 24 hours
                         </p>
                       </div>
                     </div>
@@ -358,8 +357,8 @@ export default function Contact() {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-muted-foreground">
-              Don't wait to transform your business. Contact us today for a free consultation 
-              and let's discuss how we can help you achieve your marketing goals.
+              Don&apos;t wait to transform your business. Contact us today for a free consultation 
+              and let&apos;s discuss how we can help you achieve your marketing goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

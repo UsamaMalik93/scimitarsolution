@@ -1,10 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Play, Users, Target, Zap, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export function HeroSlider() {
@@ -54,6 +52,14 @@ export function HeroSlider() {
     }
   ];
 
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  }, [slides.length]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  }, [slides.length]);
+
   // Auto-slide functionality
   useEffect(() => {
     if (isPaused) return;
@@ -77,15 +83,7 @@ export function HeroSlider() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  }, [nextSlide, prevSlide]);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -113,11 +111,6 @@ export function HeroSlider() {
                   {/* Content */}
                   <div className="space-y-8 text-center lg:text-left">
                     <div className="space-y-6">
-                      <div className="flex justify-center lg:justify-start">
-                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                          {slide.icon}
-                        </div>
-                      </div>
                       <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
                         {slide.title}
                       </h1>
@@ -149,7 +142,7 @@ export function HeroSlider() {
                         <div className="w-64 h-64 bg-primary/20 rounded-full flex items-center justify-center">
                           <div className="w-48 h-48 bg-primary/30 rounded-full flex items-center justify-center">
                             <div className="w-32 h-32 bg-primary/40 rounded-full flex items-center justify-center">
-                              {slide.icon}
+                              <div className="w-16 h-16 bg-primary/50 rounded-full"></div>
                             </div>
                           </div>
                         </div>

@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, Target, Award, TrendingUp, CheckCircle, Globe, Heart } from "lucide-react";
+import { Target, Award, TrendingUp, CheckCircle, Globe, Heart } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutUs() {
@@ -14,7 +14,7 @@ export default function AboutUs() {
               About <span className="text-primary">Scimitar Solutions</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We're a passionate team of digital marketing experts dedicated to helping 
+              We&apos;re a passionate team of digital marketing experts dedicated to helping 
               businesses thrive in the digital landscape.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function AboutUs() {
               Ready to Work With Us?
             </h2>
             <p className="text-xl text-muted-foreground">
-              Let's discuss how we can help your business grow and achieve its marketing goals.
+              Let&apos;s discuss how we can help your business grow and achieve its marketing goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

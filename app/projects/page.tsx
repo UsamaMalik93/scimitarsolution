@@ -5,15 +5,9 @@ import {
   ArrowRight, 
   ExternalLink, 
   TrendingUp, 
-  Users, 
   Target,
-  Globe,
-  Smartphone,
-  BarChart3,
   Star,
-  Calendar,
-  DollarSign,
-  Eye
+  Calendar
 } from "lucide-react";
 import Link from "next/link";
 
@@ -265,7 +259,7 @@ export default function Projects() {
                   {/* Testimonial */}
                   <div className="pt-4 border-t">
                     <p className="text-sm italic text-muted-foreground">
-                      "{project.testimonial}"
+                      &quot;{project.testimonial}&quot;
                     </p>
                   </div>
 

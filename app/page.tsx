@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, BarChart3, Target, Users, Zap, CheckCircle, Star } from "lucide-react";
+import { ArrowRight, BarChart3, Target, Users, Zap, Star } from "lucide-react";
 import Link from "next/link";
 import { HeroSlider } from "@/components/hero-slider";
 
@@ -113,7 +113,7 @@ export default function Home() {
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Don't just take our word for it - hear from our satisfied clients
+              Don&apos;t just take our word for it - hear from our satisfied clients
             </p>
           </div>
 
@@ -146,7 +146,7 @@ export default function Home() {
                     ))}
                   </div>
                   <CardDescription className="text-base">
-                    "{testimonial.content}"
+                    &quot;{testimonial.content}&quot;
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -167,7 +167,7 @@ export default function Home() {
               Ready to Grow Your Business?
             </h2>
             <p className="text-xl opacity-90">
-              Let's discuss how we can help you achieve your marketing goals and drive real results.
+              Let&apos;s discuss how we can help you achieve your marketing goals and drive real results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>

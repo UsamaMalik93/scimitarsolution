@@ -1,20 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { 
   Search, 
   BarChart3, 
   Users, 
   PenTool, 
   Target, 
-  Zap, 
   Globe, 
-  Smartphone,
   CheckCircle,
-  ArrowRight,
-  Star,
-  Clock,
-  DollarSign
+  ArrowRight
 } from "lucide-react";
 import Link from "next/link";
 
@@ -213,7 +207,7 @@ export default function Services() {
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">Why Choose Our Services?</h2>
               <p className="text-lg text-muted-foreground">
-                We're not just another marketing agency. We're your strategic partner 
+                We&apos;re not just another marketing agency. We&apos;re your strategic partner 
                 in growth, committed to delivering exceptional results that matter.
               </p>
               
@@ -273,7 +267,7 @@ export default function Services() {
               Ready to Grow Your Business?
             </h2>
             <p className="text-xl opacity-90">
-              Let's discuss your marketing goals and create a strategy that delivers real results.
+              Let&apos;s discuss your marketing goals and create a strategy that delivers real results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>
