@@ -2,14 +2,31 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
+import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const { theme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  // Ensure component is mounted before rendering theme-dependent content
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Get the appropriate logo based on theme
+  const getLogoSrc = () => {
+    if (!mounted) {
+      // Return default logo during SSR to prevent hydration mismatch
+      return "/logo.png"
+    }
+    return resolvedTheme === "light" ? "/light-mode-logo.png" : "/logo.png"
+  }
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -25,7 +42,7 @@ export function Header() {
         <div className="flex items-center space-x-2">
           <Link href="/" className="flex items-center space-x-3">
             <Image
-              src="/scimitar-logo.png"
+              src={getLogoSrc()}
               alt="Scimitar Solutions Logo"
               width={48}
               height={48}
@@ -66,13 +83,16 @@ export function Header() {
                 <div className="flex items-center justify-between p-6 border-b">
                     <div className="flex items-center space-x-3">
                       <Image
-                        src="/scimitar-logo.png"
+                        src={getLogoSrc()}
                         alt="Scimitar Solutions Logo"
                         width={64}
                         height={64}
                         className="object-contain"
                       />
-                      <span className="font-bold text-xl text-blue-900 dark:text-white">Scimitar Solutions</span>
+                      <span className="font-bold text-xl text-blue-900 dark:text-gray-100">
+  Scimitar Solutions
+</span>
+
                     </div>
                   <Button
                     variant="ghost"
