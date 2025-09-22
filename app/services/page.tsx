@@ -115,62 +115,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">What We Offer</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Choose from our comprehensive range of digital marketing services
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription className="text-base">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-sm text-muted-foreground">Features:</h4>
-                    <ul className="space-y-1">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="pt-4 border-t space-y-2">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">Price:</span>
-                      <span className="font-semibold text-primary">{service.price}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">Timeline:</span>
-                      <span className="font-medium">{service.duration}</span>
-                    </div>
-                  </div>
-
-                  <Button className="w-full" asChild>
-                    <Link href="/contact">Get Quote</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Process Section */}
       <section className="py-20 bg-muted/50">
         <div className="container">
@@ -196,65 +140,6 @@ export default function Services() {
                 <p className="text-muted-foreground">{step.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold">Why Choose Our Services?</h2>
-              <p className="text-lg text-muted-foreground">
-                We&apos;re not just another marketing agency. We&apos;re your strategic partner 
-                in growth, committed to delivering exceptional results that matter.
-              </p>
-              
-              <div className="space-y-4">
-                {[
-                  "Proven track record with 500+ successful campaigns",
-                  "Custom strategies tailored to your business goals",
-                  "Transparent reporting and regular communication",
-                  "Cutting-edge tools and technology",
-                  "Dedicated account managers for each client",
-                  "Flexible pricing options for all budgets"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild>
-                  <Link href="/contact">Start Your Project</Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/about">Learn More About Us</Link>
-                </Button>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6">
-              <Card className="text-center p-6">
-                <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                <div className="text-sm text-muted-foreground">Happy Clients</div>
-              </Card>
-              <Card className="text-center p-6">
-                <div className="text-3xl font-bold text-primary mb-2">150%</div>
-                <div className="text-sm text-muted-foreground">Average ROI</div>
-              </Card>
-              <Card className="text-center p-6">
-                <div className="text-3xl font-bold text-primary mb-2">98%</div>
-                <div className="text-sm text-muted-foreground">Client Retention</div>
-              </Card>
-              <Card className="text-center p-6">
-                <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-sm text-muted-foreground">Support</div>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
