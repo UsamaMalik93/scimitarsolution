@@ -20,7 +20,7 @@ export function Footer() {
               <span className="font-bold text-xl text-blue-900 dark:text-white">Scimitar Solutions</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Empowering businesses with innovative marketing solutions that drive growth and success.
+              Empowering businesses with innovative solutions that drive growth and success.
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer" />
@@ -69,15 +69,15 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">info@marketingpro.com</span>
+                <span className="text-sm text-muted-foreground">info@scimitarsolutions.net</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">+1 (555) 123-4567</span>
+                <span className="text-sm text-muted-foreground">+92 300 1234567</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">123 Business St, City, State 12345</span>
+                <span className="text-sm text-muted-foreground">77-B, Street 10, Pakistan Colony, Banigala, Islamabad, Pakistan</span>
               </div>
             </div>
           </div>

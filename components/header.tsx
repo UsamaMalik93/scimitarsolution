@@ -157,8 +157,8 @@ export function Header() {
                     <div className="text-sm">
                       <p className="font-semibold text-foreground mb-2">Get in touch</p>
                       <div className="space-y-1 text-muted-foreground">
-                        <p>info@marketingpro.com</p>
-                        <p>+1 (555) 123-4567</p>
+                        <p>info@scimitarsolutions.net</p>
+                        <p>+92 300 1234567</p>
                         <p className="text-xs">Mon-Fri 9AM-6PM EST</p>
                       </div>
                     </div>

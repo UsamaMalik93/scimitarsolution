@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'Scimitar Solutions Contact Form <onboarding@resend.dev>', // You can change this to your domain
-      to: ['usamamalik2033@gmail.com'],
+      to: ['info@scimitarsolutions.net'],
       subject: `New Contact Form Submission: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

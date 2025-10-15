@@ -13,13 +13,6 @@ import Link from "next/link";
 
 export default function Projects() {
 
-  const stats = [
-    { label: "Projects Completed", value: "200+", icon: <Target className="h-6 w-6" /> },
-    { label: "Client Satisfaction", value: "98%", icon: <Star className="h-6 w-6" /> },
-    { label: "Average ROI", value: "350%", icon: <TrendingUp className="h-6 w-6" /> },
-    { label: "Years Experience", value: "5+", icon: <Calendar className="h-6 w-6" /> }
-  ];
-
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -29,9 +22,8 @@ export default function Projects() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
               Our <span className="text-primary">Projects</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Explore our portfolio of successful marketing campaigns and digital solutions 
-              that have driven real results for our clients.
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-bold font-black">
+            We are Working on it...
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
@@ -44,23 +36,6 @@ export default function Projects() {
                 <Link href="/services">View Services</Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-muted/50">
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -91,8 +91,7 @@ export default function Contact() {
               Get In <span className="text-primary">Touch</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to transform your business? Let&apos;s discuss your marketing goals 
-              and how we can help you achieve them.
+              Let&apos;s discuss your goals.
             </p>
           </div>
         </div>
@@ -168,7 +167,7 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+92 300 1234567"
                       />
                     </div>
                   </div>
@@ -233,7 +232,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg">Email Us</h3>
-                        <p className="text-muted-foreground">info@marketingpro.com</p>
+                        <p className="text-muted-foreground">info@scimitarsolutions.net</p>
                         <p className="text-sm text-muted-foreground mt-1">
                           We&apos;ll respond within 24 hours
                         </p>
@@ -250,7 +249,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg">Call Us</h3>
-                        <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                        <p className="text-muted-foreground">+92 300 1234567</p>
                         <p className="text-sm text-muted-foreground mt-1">
                           Mon-Fri 9AM-6PM EST
                         </p>
@@ -268,9 +267,8 @@ export default function Contact() {
                       <div>
                         <h3 className="font-semibold text-lg">Visit Us</h3>
                         <p className="text-muted-foreground">
-                          123 Business Street<br />
-                          Suite 100<br />
-                          New York, NY 10001
+                          77-B, Street 10, Pakistan Colony<br />
+                          Banigala, Islamabad, Pakistan
                         </p>
                         <p className="text-sm text-muted-foreground mt-1">
                           By appointment only
@@ -304,7 +302,7 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-muted/50">
+      {/* <section className="py-20 bg-muted/50">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
@@ -347,7 +345,7 @@ export default function Contact() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20">
@@ -356,19 +354,18 @@ export default function Contact() {
             <h2 className="text-3xl md:text-4xl font-bold">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Don&apos;t wait to transform your business. Contact us today for a free consultation 
-              and let&apos;s discuss how we can help you achieve your marketing goals.
+            <p className="text-xl text-muted-foreground"> 
+              Let&apos;s discuss how we can help to achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="mailto:info@marketingpro.com">
+                <a href="mailto:info@scimitarsolutions.net">
                   <Mail className="mr-2 h-4 w-4" />
                   Email Us Now
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="tel:+15551234567">
+                <a href="tel:+923001234567">
                   <Phone className="mr-2 h-4 w-4" />
                   Call Us Now
                 </a>
