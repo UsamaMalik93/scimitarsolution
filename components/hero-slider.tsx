@@ -13,7 +13,7 @@ export function HeroSlider() {
     {
       id: 1,
       title: "Transform Your Business with Digital Marketing",
-      subtitle: "We help businesses grow through innovative marketing strategies, data-driven insights, and cutting-edge digital solutions.",
+      subtitle: "We help businesses grow through innovative strategies, data-driven insights, and cutting-edge digital solutions.",
       cta: "Get Started Today",
       ctaLink: "/contact",
       secondaryCta: "Learn More",

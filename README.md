@@ -1,6 +1,6 @@
 # Scimitar Solutions - Digital Marketing Website
 
-This is a [Next.js](https://nextjs.org) project for Scimitar Solutions, a digital marketing agency website built with modern technologies.
+This is a [Next.js](https://nextjs.org) project for Scimitar Solutions, a digital agency website built with modern technologies.
 
 ## Getting Started
 

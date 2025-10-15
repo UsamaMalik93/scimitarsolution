@@ -28,7 +28,7 @@ export default function Home() {
                 </div>
                 <CardTitle>Targeted Strategies</CardTitle>
                 <CardDescription>
-                  Custom marketing strategies tailored to your business goals and target audience
+                  Custom strategies tailored to your business goals and target audience
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -66,7 +66,7 @@ export default function Home() {
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">Our Services</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive digital marketing solutions for every business need
+              Comprehensive digital solutions for every business need
             </p>
           </div>
 
@@ -107,58 +107,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Don&apos;t just take our word for it - hear from our satisfied clients
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sarah Johnson",
-                company: "TechStart Inc.",
-                content: "Scimitar Solutions transformed our online presence. Our traffic increased by 300% in just 6 months!",
-                rating: 5
-              },
-              {
-                name: "Michael Chen",
-                company: "E-commerce Plus",
-                content: "The team's expertise in digital marketing is unmatched. Highly recommend their services.",
-                rating: 5
-              },
-              {
-                name: "Emily Rodriguez",
-                company: "Local Business Co.",
-                content: "Professional, reliable, and results-driven. They exceeded our expectations in every way.",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <div className="flex items-center space-x-1 mb-2">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <CardDescription className="text-base">
-                    &quot;{testimonial.content}&quot;
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="font-semibold">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.company}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container">
@@ -167,7 +115,7 @@ export default function Home() {
               Ready to Grow Your Business?
             </h2>
             <p className="text-xl opacity-90">
-              Let&apos;s discuss how we can help you achieve your marketing goals and drive real results.
+              Let&apos;s discuss how we can help you achieve your goals and drive real results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>

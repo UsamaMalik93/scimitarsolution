@@ -93,7 +93,7 @@ export default function Projects() {
             </h2>
             <p className="text-xl opacity-90">
               Join our portfolio of successful clients and let us help you achieve 
-              your marketing goals with proven strategies and expert execution.
+              your goals with proven strategies and expert execution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>

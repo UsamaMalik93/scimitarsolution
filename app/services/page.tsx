@@ -73,7 +73,7 @@ export default function Services() {
     {
       step: "02", 
       title: "Strategy Development",
-      description: "Based on our analysis, we develop a comprehensive marketing strategy tailored to your goals."
+      description: "Based on our analysis, we develop a comprehensive strategy tailored to your goals."
     },
     {
       step: "03",
@@ -97,7 +97,7 @@ export default function Services() {
               Our <span className="text-primary">Services</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive digital marketing solutions designed to grow your business 
+              Comprehensive digital solutions designed to grow your business 
               and drive measurable results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -121,7 +121,7 @@ export default function Services() {
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">Our Process</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              How we work with you to achieve your marketing goals
+              How we work with you to achieve your goals
             </p>
           </div>
 
@@ -152,7 +152,7 @@ export default function Services() {
               Ready to Grow Your Business?
             </h2>
             <p className="text-xl opacity-90">
-              Let&apos;s discuss your marketing goals and create a strategy that delivers real results.
+              Let&apos;s discuss your goals and create a strategy that delivers real results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>

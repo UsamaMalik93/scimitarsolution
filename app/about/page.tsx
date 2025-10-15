@@ -14,7 +14,7 @@ export default function AboutUs() {
               About <span className="text-primary">Scimitar Solutions</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We&apos;re a passionate team of digital marketing experts dedicated to helping 
+              We&apos;re a passionate team of digital experts dedicated to helping 
               businesses thrive in the digital landscape.
             </p>
           </div>
@@ -29,12 +29,12 @@ export default function AboutUs() {
               <h2 className="text-3xl md:text-4xl font-bold">Our Story</h2>
               <p className="text-lg text-muted-foreground">
                 Founded in 2020, Scimitar Solutions began with a simple mission: to democratize 
-                digital marketing and make it accessible to businesses of all sizes. What 
+                digital and make it accessible to businesses of all sizes. What 
                 started as a small team of three has grown into a full-service digital 
-                marketing agency serving clients worldwide.
+               agency serving clients worldwide.
               </p>
               <p className="text-lg text-muted-foreground">
-                We believe that every business deserves access to world-class marketing 
+                We believe that every business deserves access to world-class 
                 strategies, regardless of their size or budget. Our approach combines 
                 cutting-edge technology with human creativity to deliver results that 
                 matter.
@@ -83,7 +83,7 @@ export default function AboutUs() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  To empower businesses with innovative marketing solutions that drive 
+                  To empower businesses with innovative solutions that drive 
                   sustainable growth and create lasting value for our clients and their customers.
                 </p>
               </CardContent>
@@ -137,13 +137,13 @@ export default function AboutUs() {
               {
                 name: "Sarah Johnson",
                 role: "CEO & Founder",
-                description: "10+ years in digital marketing, former Google executive",
+                description: "10+ years in digital, former Google executive",
                 image: "👩‍💼"
               },
               {
                 name: "Michael Chen",
                 role: "Head of Strategy",
-                description: "Expert in data-driven marketing and analytics",
+                description: "Expert in data-driven and analytics",
                 image: "👨‍💻"
               },
               {
@@ -167,7 +167,7 @@ export default function AboutUs() {
               {
                 name: "James Wilson",
                 role: "Analytics Lead",
-                description: "Data scientist specializing in marketing attribution",
+                description: "Data scientist specializing in attribution",
                 image: "👨‍📊"
               }
             ].map((member, index) => (
@@ -285,7 +285,7 @@ export default function AboutUs() {
               Ready to Work With Us?
             </h2>
             <p className="text-xl text-muted-foreground">
-              Let&apos;s discuss how we can help your business grow and achieve its marketing goals.
+              Let&apos;s discuss how we can help your business grow and achieve its goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

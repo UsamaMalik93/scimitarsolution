@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Scimitar Solutions - Digital Marketing Solutions",
-  description: "Empowering businesses with innovative marketing solutions that drive growth and success.",
+  title: "Scimitar Solutions - Digital Solutions",
+  description: "Empowering businesses with innovative  solutions that drive growth and success.",
 };
 
 export default function RootLayout({
