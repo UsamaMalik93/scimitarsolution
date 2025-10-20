@@ -167,7 +167,7 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+92 300 1234567"
+                        placeholder="+92 51 6167826"
                       />
                     </div>
                   </div>
@@ -249,7 +249,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg">Call Us</h3>
-                        <p className="text-muted-foreground">+92 300 1234567</p>
+                        <p className="text-muted-foreground">+92 51 6167826</p>
                         <p className="text-sm text-muted-foreground mt-1">
                           Mon-Fri 9AM-6PM EST
                         </p>
@@ -365,7 +365,7 @@ export default function Contact() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="tel:+923001234567">
+                <a href="tel:+92516167826">
                   <Phone className="mr-2 h-4 w-4" />
                   Call Us Now
                 </a>
