@@ -171,7 +171,6 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject *</Label>
                     <Input
