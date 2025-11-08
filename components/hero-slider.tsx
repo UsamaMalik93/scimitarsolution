@@ -4,6 +4,8 @@ import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -12,43 +14,51 @@ export function HeroSlider() {
   const slides = [
     {
       id: 1,
-      title: "Transform Your Business with Digital Marketing",
-      subtitle: "We help businesses grow through innovative strategies, data-driven insights, and cutting-edge digital solutions.",
+      title: "Your Gateway to Pakistan's Aviation & Defence Sectors",
+      subtitle: "Trusted Engineering & Integration Partner for Aerospace anf Defence.",
       cta: "Get Started Today",
       ctaLink: "/contact",
-      secondaryCta: "Learn More",
-      secondaryCtaLink: "/about",
-      background: "bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10",
+      secondaryCta: "Our Services",
+      secondaryCtaLink: "/services",
+      background: "gradient-ocean-subtle",
+      image: "/images/aircraft.jpg", // Add your aircraft image here
+      imageAlt: "Aircraft in flight",
     },
     {
       id: 2,
-      title: "Boost Your Online Presence with SEO",
-      subtitle: "Increase your search rankings and organic traffic with our proven SEO strategies that deliver measurable results.",
-      cta: "Get SEO Audit",
-      ctaLink: "/contact",
-      secondaryCta: "View Services",
-      secondaryCtaLink: "/services",
-      background: "bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10",
+      title: "Bid & Proposal Management Expertise",
+      subtitle: "Navigate Pakistan's procurement landscape with confidence. Our team ensures full compliance with local regulations, competitive positioning, and successful bid submissions for both public and private customers.",
+      cta: "Learn More",
+      ctaLink: "/services",
+      secondaryCta: "Contact Us",
+      secondaryCtaLink: "/contact",
+      background: "gradient-ocean-subtle",
+      image: "/images/drone.jpg", // Add your drone image here
+      imageAlt: "Military drone",
     },
     {
       id: 3,
-      title: "Engage Your Audience on Social Media",
-      subtitle: "Build a strong social media presence that connects with your audience and drives meaningful engagement.",
-      cta: "Start Social Media",
-      ctaLink: "/contact",
-      secondaryCta: "View Projects",
-      secondaryCtaLink: "/projects",
-      background: "bg-gradient-to-br from-orange-500/10 via-red-500/10 to-pink-500/10",
+      title: "Technical Installation & Commissioning",
+      subtitle: "Our technical specialists deploy and commission advanced equipment at civil and military sites across Pakistan. Experience with NAVAIDS (TACAN, VORTAC), Drones, and Naval proving services.",
+      cta: "View Services",
+      ctaLink: "/services",
+      secondaryCta: "Get Consultation",
+      secondaryCtaLink: "/contact",
+      background: "gradient-ocean-subtle",
+      image: "/images/naval-ship.jpg", // Add your naval ship image here
+      imageAlt: "Naval ship",
     },
     {
       id: 4,
-      title: "Create Compelling Content That Converts",
-      subtitle: "Develop content strategies that resonate with your audience and drive conversions across all channels.",
-      cta: "Content Strategy",
-      ctaLink: "/contact",
-      secondaryCta: "See Our Work",
-      secondaryCtaLink: "/projects",
-      background: "bg-gradient-to-br from-purple-500/10 via-indigo-500/10 to-blue-500/10",
+      title: "Aviation MRO & Operations Support",
+      subtitle: "Comprehensive Maintenance, Repair, and Overhaul solutions for aircraft and ground support equipment. End-to-end operations and logistics support for mission-critical aviation and defence environments.",
+      cta: "Explore Services",
+      ctaLink: "/services",
+      secondaryCta: "About Us",
+      secondaryCtaLink: "/about",
+      background: "gradient-ocean-subtle",
+      image: "/images/aircraft-maintenance.jpg", // Add your aircraft maintenance image here
+      imageAlt: "Aircraft maintenance",
     }
   ];
 
@@ -66,7 +76,7 @@ export function HeroSlider() {
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, [slides.length, isPaused]);
@@ -89,111 +99,243 @@ export function HeroSlider() {
     setCurrentSlide(index);
   };
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    })
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
-    <section className="relative py-64 md:py-0 overflow-hidden">
+    <section className="relative py-64 md:py-0 overflow-hidden min-h-[600px]">
+      {/* Animated Background */}
+      <div className="absolute inset-0 gradient-ocean-subtle">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,191,255,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,206,209,0.1),transparent_50%)]"></div>
+      </div>
+
       <div
-        className="relative"
+        className="relative z-10"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         {/* Slides */}
-        <div className="relative h-[500px] md:h-[600px]">
-          {slides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide
-                  ? 'opacity-100 translate-x-0'
-                  : 'opacity-0 translate-x-full'
-                } ${slide.background}`}
-            >
-              <div className="container h-full flex items-center">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
-                  {/* Content */}
-                  <div className="space-y-8 text-center lg:text-left">
-                    <div className="space-y-6">
-                      <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
-                        {slide.title}
-                      </h1>
-                      <p className="text-xl text-muted-foreground max-w-2xl">
-                        {slide.subtitle}
-                      </p>
-                    </div>
+        <div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
+          <AnimatePresence mode="wait" custom={1} initial={false}>
+            {slides.map((slide, index) => {
+              if (index !== currentSlide) return null;
+              
+              return (
+                <motion.div
+                  key={slide.id}
+                  custom={1}
+                  variants={slideVariants}
+                  initial={mounted ? "enter" : "center"}
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.2 }
+                  }}
+                  className="absolute inset-0"
+                >
+                  <div className="container h-full flex items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+                      {/* Content */}
+                      <motion.div
+                        variants={contentVariants}
+                        initial={mounted ? "hidden" : "visible"}
+                        animate="visible"
+                        className="space-y-8 text-center lg:text-left z-10"
+                      >
+                        <motion.div variants={itemVariants} className="space-y-6">
+                          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
+                            {slide.title}
+                          </h1>
+                          <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+                            {slide.subtitle}
+                          </p>
+                        </motion.div>
 
-                    {/* CTAs */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                      <Button size="lg" asChild className="shadow-lg">
-                        <Link href={slide.ctaLink}>
-                          {slide.cta}
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                      <Button size="lg" variant="outline" asChild className="shadow-lg">
-                        <Link href={slide.secondaryCtaLink}>
-                          {slide.secondaryCta}
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
+                        {/* CTAs */}
+                        <motion.div
+                          variants={itemVariants}
+                          className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                        >
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Button size="lg" asChild className="shadow-xl glass-button text-foreground font-semibold">
+                              <Link href={slide.ctaLink}>
+                                {slide.cta}
+                                <ArrowRight className="ml-2 h-4 w-4 text-foreground" />
+                              </Link>
+                            </Button>
+                          </motion.div>
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Button size="lg" variant="outline" asChild className="shadow-xl glass-button text-foreground border-foreground/20 hover:bg-foreground/5 font-semibold">
+                              <Link href={slide.secondaryCtaLink}>
+                                {slide.secondaryCta}
+                              </Link>
+                            </Button>
+                          </motion.div>
+                        </motion.div>
+                      </motion.div>
 
-                  {/* Visual Element */}
-                  <div className="flex justify-center lg:justify-end">
-                    <div className="relative">
-                      <div className="w-80 h-80 bg-primary/10 rounded-full flex items-center justify-center">
-                        <div className="w-64 h-64 bg-primary/20 rounded-full flex items-center justify-center">
-                          <div className="w-48 h-48 bg-primary/30 rounded-full flex items-center justify-center">
-                            <div className="w-32 h-32 bg-primary/40 rounded-full flex items-center justify-center">
-                              <div className="w-16 h-16 bg-primary/50 rounded-full"></div>
+                      {/* Image with Glassmorphism Effect */}
+                      <motion.div
+                        variants={itemVariants}
+                        className="flex justify-center lg:justify-end relative"
+                      >
+                        <div className="relative w-full max-w-lg">
+                          {/* Glass card container */}
+                          <motion.div
+                            animate={{
+                              scale: [1, 1.02, 1],
+                            }}
+                            transition={{
+                              duration: 6,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }}
+                            className="glass-card rounded-2xl overflow-hidden border-primary/30 shadow-2xl relative group"
+                          >
+                            {/* Image */}
+                            <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px]">
+                              <Image
+                                src={slide.image}
+                                alt={slide.imageAlt}
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                priority={index === 0}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                                onError={(e) => {
+                                  // Fallback if image doesn't exist
+                                  const target = e.target as HTMLImageElement;
+                                  target.style.display = 'none';
+                                }}
+                              />
+                              {/* Gradient overlay */}
+                              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent"></div>
+                              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent"></div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
+                            
+                            {/* Decorative elements */}
+                            <div className="absolute top-4 right-4 w-16 h-16 bg-primary/20 rounded-full blur-xl"></div>
+                            <div className="absolute bottom-4 left-4 w-24 h-24 bg-cyan-500/20 rounded-full blur-xl"></div>
+                          </motion.div>
 
-                      {/* Floating Elements */}
-                      <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse"></div>
-                      <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary/60 rounded-full animate-pulse delay-1000"></div>
-                      <div className="absolute top-1/2 -right-8 w-4 h-4 bg-primary/40 rounded-full animate-pulse delay-500"></div>
+                          {/* Floating decorative elements */}
+                          <motion.div
+                            animate={{
+                              y: [0, -20, 0],
+                              x: [0, 10, 0],
+                            }}
+                            transition={{
+                              duration: 4,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }}
+                            className="absolute -top-6 -right-6 w-12 h-12 bg-primary/30 rounded-full glass-button blur-sm"
+                          ></motion.div>
+                          <motion.div
+                            animate={{
+                              y: [0, 15, 0],
+                              x: [0, -10, 0],
+                            }}
+                            transition={{
+                              duration: 5,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                              delay: 1
+                            }}
+                            className="absolute -bottom-6 -left-6 w-8 h-8 bg-cyan-500/30 rounded-full glass-button blur-sm"
+                          ></motion.div>
+                        </div>
+                      </motion.div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          ))}
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
         </div>
 
         {/* Navigation Arrows */}
-        <button
+        <motion.button
           onClick={prevSlide}
+          whileHover={{ scale: 1.1, x: -5 }}
+          whileTap={{ scale: 0.9 }}
           className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 
-             bg-background/90 hover:bg-background rounded-full p-3 shadow-lg 
-             transition-all duration-200 hover:scale-110 
-             opacity-50 hover:opacity-100"
+             glass-nav rounded-full p-3 shadow-xl 
+             transition-all duration-200 text-foreground"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="h-5 w-5" />
-        </button>
+          <ChevronLeft className="h-5 w-5 text-foreground" />
+        </motion.button>
 
-        <button
+        <motion.button
           onClick={nextSlide}
+          whileHover={{ scale: 1.1, x: 5 }}
+          whileTap={{ scale: 0.9 }}
           className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 
-             bg-background/90 hover:bg-background rounded-full p-3 shadow-lg 
-             transition-all duration-200 hover:scale-110 
-             opacity-50 hover:opacity-100"
+             glass-nav rounded-full p-3 shadow-xl 
+             transition-all duration-200 text-foreground"
           aria-label="Next slide"
         >
-          <ChevronRight className="h-5 w-5" />
-        </button>
-
+          <ChevronRight className="h-5 w-5 text-foreground" />
+        </motion.button>
 
         {/* Dots Navigation */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
           {slides.map((_, index) => (
-            <button
+            <motion.button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${currentSlide === index
-                  ? 'bg-primary scale-125 shadow-lg'
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 0.9 }}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentSlide === index
+                  ? 'bg-primary shadow-lg'
                   : 'bg-primary/30 hover:bg-primary/50'
-                }`}
+              }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

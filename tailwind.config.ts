@@ -52,6 +52,19 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Ocean Blue Serenity palette - full gradient from deep navy to light sky blue
+        ocean: {
+          50: "hsl(200, 20%, 98%)",   // Almost white icy blue
+          100: "hsl(200, 30%, 95%)",  // Very light blue
+          200: "hsl(200, 50%, 85%)",  // Pale pastel blue (baby blue)
+          300: "hsl(200, 100%, 75%)", // Soft light blue (clear sky)
+          400: "hsl(195, 100%, 60%)", // Vivid cyan/sky blue
+          500: "hsl(200, 100%, 50%)", // Bright clear blue (tropical ocean) - Primary
+          600: "hsl(210, 100%, 50%)", // Bright turquoise/deep turquoise
+          700: "hsl(210, 100%, 35%)", // Medium-dark blue (sapphire/ocean)
+          800: "hsl(220, 100%, 20%)", // Dark royal blue
+          900: "hsl(220, 100%, 10%)", // Deep navy blue (almost black)
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
